@@ -1,0 +1,2 @@
+@foreach($frutas as $f)
+

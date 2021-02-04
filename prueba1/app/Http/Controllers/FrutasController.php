@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidationFormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrutasController extends Controller
 {
@@ -13,7 +14,8 @@ class FrutasController extends Controller
     }
 
     public function naranjas(){
-        return "Web de naranjas";
+       $frutas=DB::table('frutas')->get();
+       return view('frutas.naranjas')->with('frutas', $frutas);
     }
 
     public function peras(){
